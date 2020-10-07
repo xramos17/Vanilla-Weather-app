@@ -1,0 +1,31 @@
+.full-wrapper {
+  max-width: 600px;
+  margin: 40px auto;
+}
+.app-wrapper {
+  font-family: "Inter", sans-serif;
+  padding: 35px;
+  border: 1px solid #dbdbdb;
+  border-radius: 15px;
+}
+.city-name {
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 50px;
+}
+
+li {
+  list-style: none;
+  font-size: 17px;
+  font-weight: 200;
+  margin: 0;
+  padding: 0;
+  line-height: 25px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
