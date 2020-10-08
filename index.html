@@ -21,24 +21,33 @@
     <div class="container">
       <div class="full-wrapper">
         <div class="app-wrapper">
-          <h1 class="city-name">Lisbon</h1>
-          <ul>
-            <li>Friday, 17 October</li>
-            <li>19:00</li>
-          </ul>
+          <div class="weather-header">
+            <h1 class="city-name">
+              Lisbon <span class="w-country">(PT)</span>
+            </h1>
+            <ul>
+              <li>Friday, 17 October</li>
+              <li>19:00</li>
+            </ul>
+          </div>
           <div class="row">
             <div class="col-6">
-              <img
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="cloudy"
-              />
-              12º <span>C</span>|<span>F</span>
+              <div class="clearfix current-weather">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="cloudy"
+                  class="float-left"
+                />
+                <div class="float-left">
+                  <strong>12º</strong><span class="measures-cf">C | F</span>
+                </div>
+              </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 weather-info">
               <ul>
-                <li>Cloudy</li>
-                <li>Humidity: 98%</li>
-                <li>wind: 21 km/h</li>
+                <li class="w-description">Cloudy</li>
+                <li>Humidity: <span class="w-humidity">98%</span></li>
+                <li>wind: <span class="w-wind">21</span>km/h</li>
               </ul>
             </div>
           </div>

@@ -4,18 +4,56 @@
 }
 .app-wrapper {
   font-family: "Inter", sans-serif;
-  padding: 35px;
+  padding: 30px 30px 30px 50px;
   border: 1px solid #dbdbdb;
   border-radius: 15px;
 }
 .city-name {
+  color: grey;
   margin: 0;
-
   font-weight: 400;
   font-size: 35px;
-  line-height: 50px;
+  line-height: 30px;
 }
-
+.w-country {
+  margin: 0;
+  font-size: 10px;
+  padding: 0;
+}
+.weather-header {
+  margin-bottom: 20px;
+}
+.current-weather {
+  margin-top: 5px;
+}
+.current-weather img {
+  margin-right: 10px;
+  margin-top: 0;
+  height: 70;
+  width: 70px;
+}
+.current-weather strong {
+  font-size: 64px;
+  font-weight: 300;
+  margin-top: 30px;
+  line-height: 1;
+}
+.current-weather span {
+  font-size: 12px;
+  font-weight: 300;
+}
+.current-weather .measures-cf {
+  position: relative;
+  top: -30px;
+  left: 10px;
+}
+.weather-info {
+  padding-left: 50px;
+}
+.weather-info .w-description {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
 li {
   list-style: none;
   font-size: 17px;
