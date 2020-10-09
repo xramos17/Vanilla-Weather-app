@@ -49,6 +49,13 @@
   top: -30px;
   left: 10px;
 }
+.current-weather .active {
+  color: black;
+  cursor: default;
+}
+.current-weather .active:hover {
+  text-decoration: none;
+}
 .weather-info {
   padding-left: 50px;
 }

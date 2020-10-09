@@ -78,10 +78,47 @@ function displayCurrentTemp(response) {
       "src",
       `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
+  celsiusTemp = Math.round(response.data.main.temp);
 }
 
-let city = "Porto";
-let apiKey = "1adcec3e50018a8b64c974c018ae3653";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "1adcec3e50018a8b64c974c018ae3653";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayCurrentTemp);
+}
 
-axios.get(apiUrl).then(displayCurrentTemp);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("text-city-input");
+  search(cityInput.value);
+}
+
+function convertFahrenheit(event) {
+  event.preventDefault();
+  let temperatureFahrenheit = (celsiusTemp * 9) / 5 + 32;
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  document.querySelector("#current-temp").innerHTML = Math.round(
+    temperatureFahrenheit
+  );
+}
+
+function convertCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  document.querySelector("#current-temp").innerHTML = celsiusTemp;
+}
+
+let celsiusTemp = null;
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertCelsius);
+
+search("Reykjavik");

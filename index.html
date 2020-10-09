@@ -21,14 +21,36 @@
   <body>
     <div class="container">
       <div class="full-wrapper">
-        <div class="app-wrapper">
+        <div class="app-wrapper">  
+          <form id="search-form"></form>
+          <div class="row">
+              <div class="col-9
+              ">
+                <input
+                  type="search"
+                  placeholder="Type a city..."
+                  class="form-control mb-4"
+                  id="text-city-input"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="search"
+                  class="search-button mt-1"
+                  id="search-button"
+                />
+              </div>
+           
+          </div> 
+        </form>
           <div class="weather-header">
-            <h1 class="city-name" id="city-name">Lisbon</h1>
-            <span class="w-country">(<span id="w-country">(PT)</span>)</span>
+            <h1 class="city-name" id="city-name"></h1>
+            <span class="w-country">(<span id="w-country"></span>)</span>
 
             <ul>
-              <li><span id="date-city">Friday, 17 October</span></li>
-              <li><span id="date-hours">19:00</span></li>
+              <li><span id="date-city"></span></li>
+              <li><span id="date-hours"></span></li>
             </ul>
           </div>
           <div class="row">
@@ -41,8 +63,8 @@
                   id="w-icon"
                 />
                 <div class="float-left">
-                  <strong class="current-temp" id="current-temp">12º</strong
-                  ><span class="measures-cf">C | F</span>
+                  <strong class="current-temp" id="current-temp">12</strong
+                  ><span class="measures-cf"> <a href="#" id="celsius-link" class="active">Cº</a> | <a href="#" id="fahrenheit-link" >Fº</a></span>
                 </div>
               </div>
             </div>
@@ -50,9 +72,9 @@
               <ul>
                 <li class="w-description" id="w-description">Cloudy</li>
                 <li>
-                  Humidity: <span class="w-humidity" id="w-humidity">98</span>%
+                  Humidity: <span class="w-humidity" id="w-humidity"></span>%
                 </li>
-                <li>wind: <span class="w-wind" id="w-wind">21</span>km/h</li>
+                <li>wind: <span class="w-wind" id="w-wind"></span> km/h</li>
               </ul>
             </div>
           </div>
