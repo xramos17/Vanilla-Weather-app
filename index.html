@@ -23,13 +23,12 @@
       <div class="full-wrapper">
         <div class="app-wrapper">
           <div class="weather-header">
-            <h1 class="city-name" id="city-name">
-              Lisbon <span class="w-country" id="w-country">(PT)</span>
-            </h1>
+            <h1 class="city-name" id="city-name">Lisbon</h1>
+            <span class="w-country">(<span id="w-country">(PT)</span>)</span>
 
             <ul>
-              <li><span id="#date-city">Friday, 17 October</span></li>
-              <li><span id="#date-hours">19:00</span></li>
+              <li><span id="date-city">Friday, 17 October</span></li>
+              <li><span id="date-hours">19:00</span></li>
             </ul>
           </div>
           <div class="row">
@@ -39,6 +38,7 @@
                   src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                   alt="cloudy"
                   class="float-left"
+                  id="w-icon"
                 />
                 <div class="float-left">
                   <strong class="current-temp" id="current-temp">12º</strong
@@ -50,7 +50,7 @@
               <ul>
                 <li class="w-description" id="w-description">Cloudy</li>
                 <li>
-                  Humidity: <span class="w-humidity" id="w-humidity">98%</span>
+                  Humidity: <span class="w-humidity" id="w-humidity">98</span>%
                 </li>
                 <li>wind: <span class="w-wind" id="w-wind">21</span>km/h</li>
               </ul>
