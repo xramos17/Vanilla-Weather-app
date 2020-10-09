@@ -56,13 +56,15 @@
   margin-bottom: 5px;
 }
 li {
-  text-transform: capitalize;
   list-style: none;
   font-size: 17px;
   font-weight: 200;
   margin: 0;
   padding: 0;
   line-height: 25px;
+}
+li::first-letter {
+  text-transform: capitalize;
 }
 
 ul {
