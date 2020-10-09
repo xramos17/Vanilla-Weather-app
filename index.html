@@ -14,6 +14,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
     <title>Weather App</title>
   </head>
@@ -22,12 +23,12 @@
       <div class="full-wrapper">
         <div class="app-wrapper">
           <div class="weather-header">
-            <h1 class="city-name">
-              Lisbon <span class="w-country">(PT)</span>
+              Lisbon <span class="w-country" id="w-country">(PT)</span>
             </h1>
+
             <ul>
-              <li>Friday, 17 October</li>
-              <li>19:00</li>
+              <li><span id="#date-city">Friday, 17 October</span></li>
+              <li><span id="#date-hours">19:00</span></li>
             </ul>
           </div>
           <div class="row">
@@ -39,15 +40,18 @@
                   class="float-left"
                 />
                 <div class="float-left">
-                  <strong>12º</strong><span class="measures-cf">C | F</span>
+                  <strong class="current-temp" id="current-temp">12º</strong
+                  ><span class="measures-cf">C | F</span>
                 </div>
               </div>
             </div>
             <div class="col-6 weather-info">
               <ul>
-                <li class="w-description">Cloudy</li>
-                <li>Humidity: <span class="w-humidity">98%</span></li>
-                <li>wind: <span class="w-wind">21</span>km/h</li>
+                <li class="w-description" id="w-description">Cloudy</li>
+                <li>
+                  Humidity: <span class="w-humidity" id="w-humidity">98%</span>
+                </li>
+                <li>wind: <span class="w-wind" id="w-wind">21</span>km/h</li>
               </ul>
             </div>
           </div>

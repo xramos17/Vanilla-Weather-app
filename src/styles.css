@@ -16,6 +16,7 @@
   line-height: 30px;
 }
 .w-country {
+  text-transform: uppercase;
   margin: 0;
   font-size: 10px;
   padding: 0;
@@ -55,6 +56,7 @@
   margin-bottom: 5px;
 }
 li {
+  text-transform: capitalize;
   list-style: none;
   font-size: 17px;
   font-weight: 200;
