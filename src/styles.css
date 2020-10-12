@@ -63,6 +63,35 @@
   font-size: 20px;
   margin-bottom: 5px;
 }
+
+.weather-forecast {
+  margin-top: 10px;
+}
+
+.weather-forecast h3 {
+  color: lightgrey;
+  font-weight: 400;
+  text-align: center;
+  font-size: 12px;
+  line-height: 15px;
+  padding-top: 10px;
+}
+
+.weather-forecast img {
+  display: block;
+  margin: 0 auto;
+  height: 45px;
+  width: 45px;
+}
+
+.weather-forecast-temperature {
+  text-align: center;
+  color: lightgrey;
+  font-size: 13px;
+  font-weight: 400;
+  height: auto;
+  line-height: 15px;
+}
 li {
   list-style: none;
   font-size: 17px;

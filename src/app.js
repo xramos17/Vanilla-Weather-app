@@ -56,6 +56,20 @@ function formatHour(time) {
 }
 console.log(formatHour(now));
 
+
+function formatNextHour(timestamp){
+  let hours = time.getHours();
+  if (hours > 10) {
+    hours = ` ${hours}`;
+  }
+  let minutes = time.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes} `;
+  }
+  return `${hours}:${minutes}`;
+
+}
+
 function displayCurrentTemp(response) {
   document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.main.temp
@@ -81,10 +95,32 @@ function displayCurrentTemp(response) {
   celsiusTemp = Math.round(response.data.main.temp);
 }
 
+
+function displayForecast(response){
+let forecastElement = document.querySelector("#forecast")
+forecastElement.innerHTML =null; 
+let forecast= null; 
+
+for(let index = 0; index > 6 ; index++ ){
+  let forecast = response.data.list[index];
+  forecastElement.innerHTML += `
+<div class="col-2">
+              <h3>${formatNextHour(forecast.dt * 1000)}</h3>
+              <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+              <div class="weather-forecast-temperature">
+                <strong>${Math.round(forecast.name.temp_max)}º</strong>${Math.round(forecast.name.temp_min)}º
+              </div>
+            </div> `
+}};
+
+
 function search(city) {
   let apiKey = "1adcec3e50018a8b64c974c018ae3653";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayCurrentTemp);
+
+  let apiKey= `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
@@ -122,3 +158,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertCelsius);
 
 search("Reykjavik");
+
+
