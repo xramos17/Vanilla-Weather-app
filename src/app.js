@@ -56,6 +56,7 @@ function formatHour(time) {
 }
 console.log(formatHour(now));
 
+//FORCASTIME🌤
 
 function formatNextHour(timestamp){
   let hours = time.getHours();
@@ -113,21 +114,27 @@ for(let index = 0; index > 6 ; index++ ){
             </div> `
 }};
 
+//API'S AND KEYS 💈
 
 function search(city) {
   let apiKey = "1adcec3e50018a8b64c974c018ae3653";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayCurrentTemp);
 
-  let apiUrlforecast= `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrlforecast).then(displayForecast);
+ apiUrl= `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+ axios.get(apiUrl).then(displayForecast);
 }
+
+//FORM INPUT💈
 
 function handleSubmit(event) {
   event.preventDefault();
-  let cityInput = document.querySelector("text-city-input");
+  let cityInput = document.querySelector("#text-city-input");
   search(cityInput.value);
 }
+
+
+//FAHRENHEIT & CELSIUS 💈
 
 function convertFahrenheit(event) {
   event.preventDefault();
@@ -148,6 +155,8 @@ function convertCelsius(event) {
 
 let celsiusTemp = null;
 
+//FORM AND SEARCH ENGINE 💈
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -157,6 +166,8 @@ fahrenheitLink.addEventListener("click", convertFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertCelsius);
 
+
+//DEFAULT CITY🇮🇸
 search("Reykjavik");
 
 
