@@ -1,5 +1,5 @@
 let now = new Date();
-console.log(now);
+
 
 //DATE WITH DAY MONTH AND DAY OF THE WEEK
 function formatDate(date) {
@@ -59,6 +59,7 @@ console.log(formatHour(now));
 //FORCASTIME🌤
 
 function formatNextHour(timestamp){
+  let time = new Date(timestamp)
   let hours = time.getHours();
   if (hours > 10) {
     hours = ` ${hours}`;
@@ -102,7 +103,7 @@ let forecastElement = document.querySelector("#forecast")
 forecastElement.innerHTML = null; 
 let forecast= null; 
 
-for(let index = 0; index > 6 ; index++ ){
+for(let index = 0; index < 6 ; index++){
   let forecast = response.data.list[index];
   forecastElement.innerHTML += `
 <div class ="col-2">
@@ -155,16 +156,19 @@ function convertCelsius(event) {
 
 let celsiusTemp = null;
 
-//FORM AND SEARCH ENGINE 💈
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertCelsius);
+
+
+//FORM AND SEARCH ENGINE 💈
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
 
 
 //DEFAULT CITY🇮🇸
