@@ -98,17 +98,17 @@ function displayCurrentTemp(response) {
 
 function displayForecast(response){
 let forecastElement = document.querySelector("#forecast")
-forecastElement.innerHTML =null; 
+forecastElement.innerHTML = null; 
 let forecast= null; 
 
 for(let index = 0; index > 6 ; index++ ){
   let forecast = response.data.list[index];
   forecastElement.innerHTML += `
-<div class="col-2">
+<div class ="col-2">
               <h3>${formatNextHour(forecast.dt * 1000)}</h3>
               <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
               <div class="weather-forecast-temperature">
-                <strong>${Math.round(forecast.name.temp_max)}º</strong>${Math.round(forecast.name.temp_min)}º
+                <strong>${Math.round(forecast.main.temp_max)}º</strong>${Math.round(forecast.main.temp_min)}º
               </div>
             </div> `
 }};
@@ -119,8 +119,8 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayCurrentTemp);
 
-  let apiKey= `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
+  let apiUrlforecast= `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrlforecast).then(displayForecast);
 }
 
 function handleSubmit(event) {
