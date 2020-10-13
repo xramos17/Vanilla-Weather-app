@@ -29,7 +29,7 @@
                 <input
                   type="search"
                   placeholder="Type a city..."
-                  class="form-control mb-4"
+                  class="form-control"
                   id="text-city-input"
                 />
               </div>
@@ -37,12 +37,16 @@
                 <input
                   type="submit"
                   value="search"
-                  class="search-button mt-1"
+                  class="search-button"
                   id="search-button"
                 />
+                <div class="col-2 geo-button" class="image" title="Current Location">
+                <input type="submit" value="📍" class="button-current-geo" id="button-current-geo"/> </div>
               </div>
+            
            
           </div> 
+          
         </form>
           <div class="weather-header">
             <h1 class="city-name" id="city-name"></h1>
@@ -78,7 +82,7 @@
               </ul>
             </div>
           </div>
-          <div class="weather-forecast row" id="forecast">
+          <div class="weather-forecast row mr-3 mt-4 mb-2" id="forecast">
             
           </div>
         </div>

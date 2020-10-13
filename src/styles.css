@@ -8,6 +8,35 @@
   border: 1px solid #dbdbdb;
   border-radius: 15px;
 }
+.geo-button {
+  padding: 0;
+}
+
+.button-current-geo {
+  margin-top: 5px;
+  border-radius: 5px;
+  border: #cfd4da 1px solid;
+  background-color: white;
+  color: #6e6e6e;
+  border-radius: 4px;
+  padding: 5px 28px 4px 30px;
+}
+.search-button {
+  margin-top: 1px;
+  border-radius: 5px;
+  border: #cfd4da 1px solid;
+  background-color: white;
+  color: #6e6e6e;
+  padding: 6px 15px 6px 15px;
+  border-radius: 4px;
+}
+
+.button-current-geo :hover,
+.search-button:hover {
+  cursor: pointer;
+  transition: all ease-in-out 250ms;
+}
+
 .city-name {
   color: grey;
   margin: 0;
@@ -16,14 +45,13 @@
   line-height: 30px;
 }
 .w-country {
-  display: inline;
   text-transform: uppercase;
   margin: 0;
   font-size: 10px;
   padding: 0;
 }
 .weather-header {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .current-weather {
   margin-top: 5px;
@@ -31,7 +59,7 @@
 .current-weather img {
   margin-right: 10px;
   margin-top: 0;
-  height: 70;
+  height: 70px;
   width: 70px;
 }
 .current-weather strong {
@@ -62,6 +90,7 @@
 .weather-info .w-description {
   font-size: 20px;
   margin-bottom: 5px;
+  font-weight: 400;
 }
 
 .weather-forecast {
@@ -69,7 +98,7 @@
 }
 
 .weather-forecast h3 {
-  color: lightgrey;
+  color: #6e6e6e;
   font-weight: 400;
   text-align: center;
   font-size: 12px;
@@ -91,6 +120,10 @@
   font-weight: 400;
   height: auto;
   line-height: 15px;
+}
+
+.weather-forecast-temperature strong {
+  font-size: 16px;
 }
 li {
   list-style: none;
