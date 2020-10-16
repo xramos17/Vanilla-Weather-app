@@ -61,8 +61,8 @@ console.log(formatHour(now));
 function formatNextHour(timestamp){
   let time = new Date(timestamp)
   let hours = time.getHours();
-  if (hours > 10) {
-    hours = ` ${hours}`;
+  if (hours < 10) {
+    hours = ` 0${hours}`;
   }
   let minutes = time.getMinutes();
   if (minutes < 10) {
@@ -79,6 +79,15 @@ function displayCurrentTemp(response) {
   document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.main.temp
   );
+   document.querySelector("#w-tempmax").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
+ document.querySelector("#w-tempmin").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
+
+
+
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#w-description").innerHTML =
     response.data.weather[0].description;
@@ -113,7 +122,7 @@ for(let index = 0; index < 6 ; index++){
               <h3>${formatNextHour(forecast.dt * 1000)}</h3>
               <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
               <div class="weather-forecast-temperature">
-                <strong>${Math.round(forecast.main.temp_max)}º</strong> ${Math.round(forecast.main.temp_min)}º
+                <strong class="forecast-convert">${Math.round(forecast.main.temp_max)}º</strong> <span class="forecast-convert">${Math.round(forecast.main.temp_min)}º</span>
               </div>
             </div> `
 }};

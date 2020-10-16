@@ -50,20 +50,18 @@
   font-size: 10px;
   padding: 0;
 }
-.weather-header {
-  margin-bottom: 15px;
-}
+
 .current-weather {
   margin-top: 5px;
 }
 .current-weather img {
   margin-right: 10px;
   margin-top: 0;
-  height: 70px;
-  width: 70px;
+  height: 75px;
+  width: 75px;
 }
 .current-weather strong {
-  font-size: 64px;
+  font-size: 70px;
   font-weight: 300;
   margin-top: 30px;
   line-height: 1;
@@ -74,7 +72,7 @@
 }
 .current-weather .measures-cf {
   position: relative;
-  top: -30px;
+  top: -35px;
   left: 10px;
 }
 .current-weather .active {
@@ -90,6 +88,12 @@
 .weather-info .w-description {
   font-size: 20px;
   margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.min-max-temp {
+  color: lightgrey;
+
   font-weight: 400;
 }
 
@@ -116,7 +120,7 @@
 .weather-forecast-temperature {
   text-align: center;
   color: lightgrey;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   height: auto;
   line-height: 15px;
@@ -124,6 +128,12 @@
 
 .weather-forecast-temperature strong {
   font-size: 16px;
+  font-weight: 500;
+}
+.weather-max-min li {
+  color: black;
+  font-size: 12px;
+  padding: 0px;
 }
 li {
   list-style: none;
@@ -140,4 +150,23 @@ li::first-letter {
 ul {
   margin: 0;
   padding: 0;
+}
+
+.weather-minmax-temperature li {
+  margin-top: 5px;
+  margin: 5px 0 5px 0;
+  color: lightgrey;
+
+  height: auto;
+  line-height: 15px;
+  font-size: 16px;
+}
+.weather-minmax-temperature strong {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.weather-minmax-temperature span {
+  font-size: 12px;
+  font-weight: 500;
 }
