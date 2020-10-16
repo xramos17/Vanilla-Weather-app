@@ -115,10 +115,10 @@ let forecastElement = document.querySelector("#forecast")
 forecastElement.innerHTML = null; 
 let forecast= null; 
 
-for(let index = 0; index < 6 ; index++){
+for(let index = 0; index < 5 ; index++){
   let forecast = response.data.list[index];
   forecastElement.innerHTML += `
-<div class ="col-2">
+<div class ="col-2 ml-2">
               <h3>${formatNextHour(forecast.dt * 1000)}</h3>
               <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
               <div class="weather-forecast-temperature">
@@ -158,7 +158,7 @@ function handleSubmit(event) {
 }
 
 
-//FAHRENHEIT & CELSIUS 💈
+//FAHRENHEIT & CELSIUS (FORECAST CONVERT & CURRENT TEMPERATURE CONVERT)💈
 
 function convertFahrenheit(event) {
   event.preventDefault();
@@ -168,6 +168,13 @@ function convertFahrenheit(event) {
   document.querySelector("#current-temp").innerHTML = Math.round(
     temperatureFahrenheit
   );
+  document.querySelector("#w-tempmax").innerHTML = Math.round(temperatureFahrenheit);
+  document.querySelector("#w-tempmin").innerHTML = Math.round(temperatureFahrenheit);
+   let forecastItems = document.querySelectorAll(".forecast-convert");
+  forecastItems.forEach(function(item) {
+  item.innerHTML = `${Math.round((celsiusTemp * 9) / 5 + 32)}º`;
+  });
+
 }
 
 function convertCelsius(event) {
@@ -175,6 +182,13 @@ function convertCelsius(event) {
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   document.querySelector("#current-temp").innerHTML = celsiusTemp;
+  document.querySelector("#w-tempmax").innerHTML = celsiusTemp;
+  document.querySelector("#w-tempmin").innerHTML = celsiusTemp;
+  let forecastItems = document.querySelectorAll(".forecast-convert");
+  forecastItems.forEach(function(item) {
+  item.innerHTML = `${Math.round(celsiusTemp)}º`;
+  });
+  
 }
 
 let celsiusTemp = null;

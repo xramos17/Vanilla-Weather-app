@@ -4,7 +4,7 @@
 }
 .app-wrapper {
   font-family: "Inter", sans-serif;
-  padding: 30px 30px 30px 50px;
+  padding: 30px 15px 35px 50px;
   border: 1px solid #dbdbdb;
   border-radius: 15px;
 }
@@ -83,17 +83,11 @@
   text-decoration: none;
 }
 .weather-info {
-  padding-left: 50px;
+  padding-left: 60px;
 }
 .weather-info .w-description {
   font-size: 20px;
   margin-bottom: 5px;
-  font-weight: 400;
-}
-
-.min-max-temp {
-  color: lightgrey;
-
   font-weight: 400;
 }
 
@@ -105,7 +99,7 @@
   color: #6e6e6e;
   font-weight: 400;
   text-align: center;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 15px;
   padding-top: 10px;
 }
@@ -113,14 +107,14 @@
 .weather-forecast img {
   display: block;
   margin: 0 auto;
-  height: 45px;
-  width: 45px;
+  height: 60px;
+  width: 60px;
 }
 
 .weather-forecast-temperature {
   text-align: center;
   color: lightgrey;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 400;
   height: auto;
   line-height: 15px;
@@ -134,6 +128,24 @@
   color: black;
   font-size: 12px;
   padding: 0px;
+}
+.weather-minmax-temperature li {
+  margin-top: 30px;
+  margin: 5px 0 10px 0;
+  color: lightgrey;
+
+  height: auto;
+  line-height: 15px;
+  font-size: 16px;
+}
+.weather-minmax-temperature strong {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.weather-minmax-temperature span {
+  font-size: 15px;
+  font-weight: 5400;
 }
 li {
   list-style: none;
@@ -150,23 +162,4 @@ li::first-letter {
 ul {
   margin: 0;
   padding: 0;
-}
-
-.weather-minmax-temperature li {
-  margin-top: 5px;
-  margin: 5px 0 5px 0;
-  color: lightgrey;
-
-  height: auto;
-  line-height: 15px;
-  font-size: 16px;
-}
-.weather-minmax-temperature strong {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.weather-minmax-temperature span {
-  font-size: 12px;
-  font-weight: 500;
 }
