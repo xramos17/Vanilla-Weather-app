@@ -172,7 +172,7 @@ function convertFahrenheit(event) {
   document.querySelector("#w-tempmin").innerHTML = Math.round(temperatureFahrenheit);
    let forecastItems = document.querySelectorAll(".forecast-convert");
   forecastItems.forEach(function(item) {
-  item.innerHTML = `${Math.round((celsiusTemp * 9) / 5 + 32)}º`;
+  item.innerHTML = `${Math.round(temperatureFahrenheit)}º`;
   });
 
 }
@@ -184,6 +184,7 @@ function convertCelsius(event) {
   document.querySelector("#current-temp").innerHTML = celsiusTemp;
   document.querySelector("#w-tempmax").innerHTML = celsiusTemp;
   document.querySelector("#w-tempmin").innerHTML = celsiusTemp;
+
   let forecastItems = document.querySelectorAll(".forecast-convert");
   forecastItems.forEach(function(item) {
   item.innerHTML = `${Math.round(celsiusTemp)}º`;

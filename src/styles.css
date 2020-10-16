@@ -4,7 +4,7 @@
 }
 .app-wrapper {
   font-family: "Inter", sans-serif;
-  padding: 30px 15px 35px 50px;
+  padding: 30px 15px 40px 50px;
   border: 1px solid #dbdbdb;
   border-radius: 15px;
 }
@@ -133,7 +133,6 @@
   margin-top: 30px;
   margin: 5px 0 10px 0;
   color: lightgrey;
-
   height: auto;
   line-height: 15px;
   font-size: 16px;
