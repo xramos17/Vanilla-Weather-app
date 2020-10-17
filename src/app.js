@@ -79,14 +79,12 @@ function displayCurrentTemp(response) {
   document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.main.temp
   );
-   document.querySelector("#w-tempmax").innerHTML = Math.round(
+   document.querySelector("#w-tempmax").innerHTML = `${Math.round(
     response.data.main.temp_max
-  );
- document.querySelector("#w-tempmin").innerHTML = Math.round(
+  )}º`;
+ document.querySelector("#w-tempmin").innerHTML = `${Math.round(
     response.data.main.temp_min
-  );
-
-
+  )}º`;
 
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#w-description").innerHTML =
@@ -168,36 +166,45 @@ function convertFahrenheit(event) {
   document.querySelector("#current-temp").innerHTML = Math.round(
     temperatureFahrenheit
   );
-  document.querySelector("#w-tempmax").innerHTML = Math.round(temperatureFahrenheit);
-  document.querySelector("#w-tempmin").innerHTML = Math.round(temperatureFahrenheit);
-   let forecastItems = document.querySelectorAll(".forecast-convert");
+  document.querySelector("#w-tempmax").innerHTML = `${Math.round(temperatureFahrenheit)}º`;
+  document.querySelector("#w-tempmin").innerHTML = `${Math.round(temperatureFahrenheit)}º`;
+  
+  let forecastItems = document.querySelectorAll(".forecast-convert");
   forecastItems.forEach(function(item) {
-  item.innerHTML = `${Math.round(temperatureFahrenheit)}º`;
+        // grabbing the current value to convert
+    let currentTemp = item.innerHTML;
+    item.innerHTML = `${Math.round((currentTemp * 9) / 5 + 32)}º`;
   });
+// avoid multiple converts when clicking more than once
+  fahrenheitLink.removeEventListener("click", convertFahrenheit);
+  celsiusLink.addEventListener("click", convertCelsius);
+
 
 }
-
 function convertCelsius(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   document.querySelector("#current-temp").innerHTML = celsiusTemp;
-  document.querySelector("#w-tempmax").innerHTML = celsiusTemp;
-  document.querySelector("#w-tempmin").innerHTML = celsiusTemp;
+  document.querySelector("#w-tempmax").innerHTML = `${celsiusTemp}º`;
+  document.querySelector("#w-tempmin").innerHTML = `${celsiusTemp}º`;
 
   let forecastItems = document.querySelectorAll(".forecast-convert");
   forecastItems.forEach(function(item) {
-  item.innerHTML = `${Math.round(celsiusTemp)}º`;
+     // grabbing the current value to convert
+    let currentTemp = item.innerHTML;
+  item.innerHTML = `${Math.round(((currentTemp - 32) * 5) / 9)}º`;
   });
   
+// avoid multiple converts when clicking more than once
+  fahrenheitLink.addEventListener("click", convertFahrenheit);
+  celsiusLink.removeEventListener("click", convertCelsius);
 }
 
 let celsiusTemp = null;
 
-
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertFahrenheit);
-
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertCelsius);
 
