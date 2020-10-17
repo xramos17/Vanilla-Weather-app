@@ -4,8 +4,9 @@
 }
 .app-wrapper {
   font-family: "Inter", sans-serif;
-  padding: 30px 15px 40px 50px;
-  border: 1px solid #dbdbdb;
+  padding: 30px 25px 40px 50px;
+  border: 1px solid #ed927b;
+
   border-radius: 15px;
 }
 .geo-button {
@@ -15,8 +16,6 @@
 .button-current-geo {
   margin-top: 5px;
   border-radius: 5px;
-  border: #cfd4da 1px solid;
-  background-color: white;
   color: #6e6e6e;
   border-radius: 4px;
   padding: 5px 28px 4px 30px;
@@ -24,11 +23,16 @@
 .search-button {
   margin-top: 1px;
   border-radius: 5px;
-  border: #cfd4da 1px solid;
-  background-color: white;
   color: #6e6e6e;
   padding: 6px 15px 6px 15px;
   border-radius: 4px;
+}
+
+.form-control,
+.search-button,
+.button-current-geo {
+  border: #ed927b 1px solid;
+  background-color: white;
 }
 
 .button-current-geo :hover,
@@ -38,7 +42,7 @@
 }
 
 .city-name {
-  color: grey;
+  color: #ed927b;
   margin: 0;
   font-weight: 400;
   font-size: 35px;
