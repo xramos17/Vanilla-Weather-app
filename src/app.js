@@ -112,10 +112,10 @@ function search(city) {
   let apiKey = "1adcec3e50018a8b64c974c018ae3653";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayCurrentTemp);
-
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
 }
+
 function searchLocation(position) {
   let units = "metric";
   let latitude = position.coords.latitude;
@@ -123,6 +123,8 @@ function searchLocation(position) {
   let apiKey = "08055b42352faa5e0aeff40ba5a95cdb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayCurrentTemp);
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //FORM INPUT💈
@@ -184,6 +186,7 @@ fahrenheitLink.addEventListener("click", convertFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertCelsius);
 
+
 //FORM AND SEARCH ENGINE 💈
 
 let form = document.querySelector("#search-form");
@@ -194,6 +197,7 @@ form.addEventListener("submit", handleSubmit);
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
+  navigator.geolocation.getCurrentPosition(search);
 }
 
 let currentLocation = document.querySelector("#button-current-geo");
